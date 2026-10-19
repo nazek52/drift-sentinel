@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "dataset_sha256": "7a443a4c5a592b244115beb97033848756f93755c7be919f87fb7dc3e7ecbf74",
+  "sklearn_version": "1.9.1",
+  "as_of": 2399.0,
+  "threshold": 0.18,
+  "split": {
+    "train": 1411,
+    "validation": 451,
+    "test": 450,
+    "train_label_cutoff": 1440.0,
+    "validation_label_cutoff": 1920.0,
+    "withheld_test_labels": 30
+  },
+  "validation": {
+    "rows": 451,
+    "positive_rate": 0.2638580931263858,
+    "average_precision": 0.6686972090186888,
+    "roc_auc": 0.8220360433329958,
+    "brier": 0.14042382310741267,
+    "precision": 0.39338235294117646,
+    "recall": 0.8991596638655462,
+    "f2": 0.7152406417112299,
+    "confusion_matrix_tn_fp_fn_tp": [
+      167,
+      165,
+      12,
+      107
+    ]
+  },
+  "test": {
+    "rows": 450,
+    "positive_rate": 0.23333333333333334,
+    "average_precision": 0.4572725641177846,
+    "roc_auc": 0.6885300207039338,
+    "brier": 0.27425688581953034,
+    "precision": 0.2457831325301205,
+    "recall": 0.9714285714285714,
+    "f2": 0.6107784431137725,
+    "confusion_matrix_tn_fp_fn_tp": [
+      32,
+      313,
+      3,
+      102
+    ]
+  },
+  "baseline_test": {
+    "rows": 450,
+    "positive_rate": 0.23333333333333334,
+    "average_precision": 0.23333333333333334,
+    "roc_auc": 0.5,
+    "brier": 0.18241331524455265,
+    "precision": 0.23333333333333334,
+    "recall": 1.0,
+    "f2": 0.603448275862069,
+    "confusion_matrix_tn_fp_fn_tp": [
+      0,
+      345,
+      0,
+      105
+    ]
+  },
+  "test_average_precision_iid_bootstrap_95pct": [
+    0.3613948766796648,
+    0.5444528363966964
+  ],
+  "feature_psi": {
+    "error_ratio": 0.019570110464036096,
+    "latency_ratio": 1.0415463229924653,
+    "queue_depth": 0.5951418749141566,
+    "cpu_ratio": 0.04039630003932909,
+    "deploy_age_hours": 0.031619193271316945
+  },
+  "drift_review_features": [
+    "latency_ratio",
+    "queue_depth"
+  ],
+  "limitations": [
+    "Synthetic observations do not establish real incident prediction quality.",
+    "PSI >= 0.2 is a review heuristic, not proof of concept drift or a calibrated test.",
+    "A random bootstrap assumes independent observations; group real incidents before evaluation.",
+    "Threshold maximizes validation F2; business costs and calibration require separate study."
+  ]
+}
